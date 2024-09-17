@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PassagensAereas
 {
     public class PassagemAerea
     {
-
-        public string  Origem { get; set; }
+        public string Origem { get; set; }
         public string Destino { get; set; }
-            public string Data { get; set; }
+        public string Data { get; set; }
         public int Quantidades { get; set; }
-        public doublie Preco { get; set; }
+        public double Preco { get; set; } // Corrigido aqui
 
-        public PassagemAerea(string origem, string destino, string data, int quantidade, doublie preco)
+        public PassagemAerea(string origem, string destino, string data, int quantidade, double preco) // Corrigido aqui
         {
             Origem = origem;
             Destino = destino;
@@ -23,6 +18,7 @@ namespace PassagensAereas
             Quantidades = quantidade;
             Preco = preco;
         }
-        public double CalcularPreco() => Preco * Quantidades;
+
+        public virtual double CalcularPreco() => Preco * Quantidades;
     }
 }
